@@ -1,0 +1,14 @@
+[ { "name": "a\":{}[]", 
+"coordinates": { "x": 23, "y": 435.654 }, 
+"enginePower": null,
+"numberOfWheels": 4324,
+"capacity": 543.0,
+"fuelType": "DIESEL"
+},
+{ "name": "b", 
+"coordinates": { "x": 23234, "y": 432.0 }, 
+"enginePower": 12.0, 
+"numberOfWheels": 55,
+"capacity": 66.0,
+"fuelType": "GASOLINE"
+} ]
