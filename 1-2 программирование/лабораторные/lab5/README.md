@@ -56,7 +56,7 @@ resources/     # ресурсы проекта
 
 ```bash
 export FILE_NAME=scripts/data.json
-javac -d out $(find src -name "*.java")
+javac -d out src/**/*.java
 java -cp out cmd.Main
 ```
 
@@ -66,6 +66,3 @@ java -cp out cmd.Main
 execute_script scripts/FirstFile
 ```
 
-## Примечание
-
-Это учебный проект, поэтому код сделан простым и понятным: без лишних фреймворков, сложной архитектуры и внешних зависимостей.
