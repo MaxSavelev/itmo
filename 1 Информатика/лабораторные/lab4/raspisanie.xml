@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schedule>
+  <univer>Университет ИТМО</univer>
+  <gripa>Р3108</gripa>
+  <raspisanie>
+    <day name="ponedelnik">
+      <group nedela="Четная">
+        <lesson1>
+          <vremya>15:30-17:00</vremya>
+          <predmet>Информатика</predmet>
+          <tip>Практика</tip>
+          <prepodavatel>Малышева Т.А.</prepodavatel>
+          <address>г. Санкт-Петербург, Кронверкский пр., 49</address>
+          <auditorial>1338</auditorial>
+        </lesson1>
+        <lesson2>
+          <vremya>18:50-20:20</vremya>
+          <predmet>Программирование</predmet>
+          <tip>Практика</tip>
+          <prepodavatel>Райла Мартин</prepodavatel>
+          <address>г. Санкт-Петербург, Кронверкский пр., 49</address>
+          <auditorial>1320</auditorial>
+        </lesson2>
+      </group>
+      <group nedela="Нечетная">
+        <lesson1>
+          <vremya>13:30-15:00</vremya>
+          <predmet>ОПД</predmet>
+          <tip>Практика</tip>
+          <prepodavatel>Блохина Е.Н.</prepodavatel>
+          <address>г. Санкт-Петербург, Кронверкский пр., 49</address>
+          <auditorial>1324</auditorial>
+        </lesson1>
+        <lesson2>
+          <vremya>15:30-17:00</vremya>
+          <predmet>ОПД</predmet>
+          <tip>Практика</tip>
+          <prepodavatel>Блохина Е.Н.</prepodavatel>
+          <address>г. Санкт-Петербург, Кронверкский пр., 49</address>
+          <auditorial>1324</auditorial>
+        </lesson2>
+      </group>
+    </day>
+    <day name="subbota">
+      <group nedela="Четная">
+        <lesson1>
+          <vremya>18:50-20:20</vremya>
+          <predmet>История российской науки и техники</predmet>
+          <tip>Консультация</tip>
+          <prepodavatel>Васильев А.В.</prepodavatel>
+          <address>нет</address>
+          <auditorial>нет</auditorial>
+        </lesson1>
+        <lesson2>
+          <vremya>20:30-22:00</vremya>
+          <predmet>История российской науки и техники</predmet>
+          <tip>Консультация</tip>
+          <prepodavatel>Васильев А.В.</prepodavatel>
+          <address>нет</address>
+          <auditorial>нет</auditorial>
+        </lesson2>
+      </group>
+      <group nedela="Нечетная">
+        <lesson1>
+          <vremya>18:50-20:20</vremya>
+          <predmet>История российской науки и техники</predmet>
+          <tip>Консультация</tip>
+          <prepodavatel>Васильев А.В.</prepodavatel>
+          <address>нет</address>
+          <auditorial>нет</auditorial>
+        </lesson1>
+        <lesson2>
+          <vremya>20:30-22:00</vremya>
+          <predmet>История российской науки и техники</predmet>
+          <tip>Консультация</tip>
+          <prepodavatel>Васильев А.В.</prepodavatel>
+          <address>нет</address>
+          <auditorial>нет</auditorial>
+        </lesson2>
+      </group>
+    </day>
+  </raspisanie>
+</schedule>

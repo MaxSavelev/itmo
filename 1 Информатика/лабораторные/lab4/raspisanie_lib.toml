@@ -1,0 +1,94 @@
+univer = "Университет ИТМО"
+gripa = "Р3108"
+
+[[raspisanie.ponedelnik]]
+nedela = "Четная"
+
+[[raspisanie.ponedelnik.zanatia]]
+vremya = "13:30-15:00"
+predmet = "Информатика"
+tip = "Практика"
+prepodavatel = "Малышева Т.А."
+address = "г. Санкт-Петербург, Кронверкский пр., 49"
+auditorial = "1338"
+
+[[raspisanie.ponedelnik.zanatia]]
+vremya = "15:30-17:00"
+predmet = "Информатика"
+tip = "Практика"
+prepodavatel = "Малышева Т.А."
+address = "г. Санкт-Петербург, Кронверкский пр., 49"
+auditorial = "1338"
+
+[[raspisanie.ponedelnik.zanatia]]
+vremya = "17:10-18:40"
+predmet = "Программирование"
+tip = "Практика"
+prepodavatel = "Райла Мартин"
+address = "г. Санкт-Петербург, Кронверкский пр., 49"
+auditorial = "1320"
+
+[[raspisanie.ponedelnik.zanatia]]
+vremya = "18:50-20:20"
+predmet = "Программирование"
+tip = "Практика"
+prepodavatel = "Райла Мартин"
+address = "г. Санкт-Петербург, Кронверкский пр., 49"
+auditorial = "1320"
+
+[[raspisanie.ponedelnik]]
+nedela = "Нечетная"
+
+[[raspisanie.ponedelnik.zanatia]]
+vremya = "13:30-15:00"
+predmet = "ОПД"
+tip = "Практика"
+prepodavatel = "Блохина Е.Н."
+address = "г. Санкт-Петербург, Кронверкский пр., 49"
+auditorial = "1324"
+
+[[raspisanie.ponedelnik.zanatia]]
+vremya = "15:30-17:00"
+predmet = "ОПД"
+tip = "Практика"
+prepodavatel = "Блохина Е.Н."
+address = "г. Санкт-Петербург, Кронверкский пр., 49"
+auditorial = "1324"
+
+[[raspisanie.subbota]]
+nedela = "Четная"
+
+[[raspisanie.subbota.zanatia]]
+vremya = "18:50-20:20"
+predmet = "История российской науки и техники"
+tip = "Консультация"
+prepodavatel = "Васильев А.В."
+address = "нет"
+auditorial = "нет"
+
+[[raspisanie.subbota.zanatia]]
+vremya = "20:30-22:00"
+predmet = "История российской науки и техники"
+tip = "Консультация"
+prepodavatel = "Васильев А.В."
+address = "нет"
+auditorial = "нет"
+
+[[raspisanie.subbota]]
+nedela = "Нечетная"
+
+[[raspisanie.subbota.zanatia]]
+vremya = "18:50-20:20"
+predmet = "История российской науки и техники"
+tip = "Консультация"
+prepodavatel = "Васильев А.В."
+address = "нет"
+auditorial = "нет"
+
+[[raspisanie.subbota.zanatia]]
+vremya = "20:30-22:00"
+predmet = "История российской науки и техники"
+tip = "Консультация"
+prepodavatel = "Васильев А.В."
+address = "нет"
+auditorial = "нет"
