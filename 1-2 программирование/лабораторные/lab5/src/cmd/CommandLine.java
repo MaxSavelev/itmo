@@ -7,6 +7,14 @@ import storage.Storage;
 import storage.StorageException;
 import storage.VehicleCollection;
 
+import org.jline.reader.Candidate;
+import org.jline.reader.EndOfFileException;
+import org.jline.reader.LineReader;
+import org.jline.reader.LineReaderBuilder;
+import org.jline.reader.ParsedLine;
+import org.jline.reader.UserInterruptException;
+import org.jline.terminal.TerminalBuilder;
+
 import java.io.*;
 import java.util.*;
 
@@ -15,6 +23,7 @@ import java.util.*;
  * <p>
  * Отвечает за ввод команд пользователя
  * и за работу с коллекцией транспортных средств.
+ * В интерактивном режиме использует JLine для автодополнения команд по Tab.
  * </p>
  *
  * @author makssavelev
@@ -23,12 +32,16 @@ import java.util.*;
 public class CommandLine implements Runnable {
     private static Scanner scanner = new Scanner(System.in);
     private static PrintStream out = System.out;
+    /** Считыватель интерактивных команд с поддержкой редактирования строки и Tab. */
+    private static LineReader lineReader;
     private static String collectionFileName = System.getenv("FILE_NAME");
     private static Storage collection = new VehicleCollection();
     private static Set<String> executingScripts = new HashSet<>();
     private static Stack<Scanner> scannerStack = new Stack<>();
     private static Stack<PrintStream> outStack = new Stack<>();
     private static Stack<String> scriptPathStack = new Stack<>();
+    /** Временный список подходящих команд для автодополнения. */
+    private static List<String> dlc = new ArrayList<>();
     private static List<Command> cmds = new ArrayList<>() {
         {
             add(new Command("help",
@@ -156,7 +169,7 @@ public class CommandLine implements Runnable {
     /**
      * Считывает координату X.
      *
-     * @param allowSkip можно ли пропустить ввод и оставить старое значение
+     * @param allowSkip    можно ли пропустить ввод и оставить старое значение
      * @param currentValue текущее значение X, которое сохранится при пустом вводе
      * @return корректное значение X
      */
@@ -178,7 +191,7 @@ public class CommandLine implements Runnable {
     /**
      * Считывает координату Y.
      *
-     * @param allowSkip можно ли пропустить ввод и оставить старое значение
+     * @param allowSkip    можно ли пропустить ввод и оставить старое значение
      * @param currentValue текущее значение Y, которое сохранится при пустом вводе
      * @return корректное значение Y
      */
@@ -204,8 +217,8 @@ public class CommandLine implements Runnable {
     /**
      * Преобразует строку в число типа {@code double}.
      *
-     * @param value строка, которую ввел пользователь
-     * @param fieldName имя поля для сообщения об ошибке
+     * @param value        строка, которую ввел пользователь
+     * @param fieldName    имя поля для сообщения об ошибке
      * @param errorMessage текст ошибки при неверном вводе
      * @return число типа {@code double}
      */
@@ -224,7 +237,7 @@ public class CommandLine implements Runnable {
     /**
      * Считывает мощность двигателя.
      *
-     * @param allowSkip можно ли пропустить ввод и оставить старое значение
+     * @param allowSkip    можно ли пропустить ввод и оставить старое значение
      * @param currentValue текущее значение мощности, которое сохранится при пустом вводе
      * @return корректное значение мощности или {@code null}
      */
@@ -263,7 +276,7 @@ public class CommandLine implements Runnable {
     /**
      * Считывает количество колес.
      *
-     * @param allowSkip можно ли пропустить ввод и оставить старое значение
+     * @param allowSkip    можно ли пропустить ввод и оставить старое значение
      * @param currentValue текущее количество колес, которое сохранится при пустом вводе
      * @return корректное количество колес
      */
@@ -300,7 +313,7 @@ public class CommandLine implements Runnable {
     /**
      * Считывает вместимость.
      *
-     * @param allowSkip можно ли пропустить ввод и оставить старое значение
+     * @param allowSkip    можно ли пропустить ввод и оставить старое значение
      * @param currentValue текущее значение вместимости, которое сохранится при пустом вводе
      * @return корректное значение вместимости
      */
@@ -335,7 +348,7 @@ public class CommandLine implements Runnable {
     /**
      * Считывает имя транспортного средства.
      *
-     * @param allowSkip можно ли пропустить ввод и оставить старое значение
+     * @param allowSkip    можно ли пропустить ввод и оставить старое значение
      * @param currentValue текущее имя, которое сохранится при пустом вводе
      * @return корректное имя транспортного средства
      */
@@ -365,7 +378,7 @@ public class CommandLine implements Runnable {
     /**
      * Считывает тип топлива.
      *
-     * @param allowSkip можно ли пропустить ввод и оставить старое значение
+     * @param allowSkip    можно ли пропустить ввод и оставить старое значение
      * @param currentValue текущее значение fuelType, которое сохранится при пустом вводе
      * @return корректный тип топлива
      */
@@ -392,7 +405,7 @@ public class CommandLine implements Runnable {
      *
      * @param args список аргументов команды; в первом элементе должен быть id
      * @throws NumberFormatException если id нельзя преобразовать в число
-     * @throws StorageException если элемент с таким id не найден
+     * @throws StorageException      если элемент с таким id не найден
      */
     private static void update(List<String> args) {
         if (args.size() != 1) {
@@ -413,7 +426,7 @@ public class CommandLine implements Runnable {
      *
      * @param args список аргументов команды; в первом элементе должен быть id
      * @throws NumberFormatException если id нельзя преобразовать в число
-     * @throws StorageException если элемент с таким id не найден
+     * @throws StorageException      если элемент с таким id не найден
      */
     private static void removeById(List<String> args) {
         if (args.size() != 1) {
@@ -466,6 +479,7 @@ public class CommandLine implements Runnable {
         }
         throw new StorageException("Строка для поиска не может быть пустой");
     }
+
     /**
      * Считает, сколько элементов имеют указанное число колес.
      *
@@ -487,7 +501,7 @@ public class CommandLine implements Runnable {
             throw new StorageException("numberOfWheels должно быть больше 0");
         }
 
-        if (collection.countByNumberOfWheels(numberOfWheels)!=0) {
+        if (collection.countByNumberOfWheels(numberOfWheels) != 0) {
             System.out.println(collection.countByNumberOfWheels(numberOfWheels));
         } else {
             System.out.println("Элементов, значение поля numberOfWheels которых равно заданному, не найдены");
@@ -580,36 +594,46 @@ public class CommandLine implements Runnable {
     /**
      * Запускает основной цикл обработки команд.
      * <p>
-     * Метод читает команду, ищет ее в списке команд
-     * и выполняет нужное действие.
+     * В ручном режиме команда считывается через JLine, чтобы работало
+     * автодополнение по Tab. При выполнении скрипта используется Scanner,
+     * потому что команды уже читаются из файла построчно.
      * </p>
      */
     @Override
     public void run() {
         //execute_script ./scripts/FirstFile
         while (true) {
-            out.print("> ");
-            if (!scanner.hasNextLine()) {
-                if (!scriptPathStack.empty()) {
-                    executingScripts.remove(scriptPathStack.pop());
-                }
-                if (!scannerStack.empty()) {
-                    scanner = scannerStack.pop();
-                    out = outStack.pop();
-                } else {
+            String line;
+            if (isInteractiveInput()) {
+                line = readInteractiveCommandLine();
+                if (line == null) {
                     setSystemStream();
+                    continue;
                 }
-                continue;
+            } else {
+                if (!scanner.hasNextLine()) {
+                    if (!scriptPathStack.empty()) {
+                        executingScripts.remove(scriptPathStack.pop());
+                    }
+                    if (!scannerStack.empty()) {
+                        scanner = scannerStack.pop();
+                        out = outStack.pop();
+                    } else {
+                        setSystemStream();
+                    }
+                    continue;
+                }
+                out.print("> ");
+                line = scanner.nextLine();
             }
-            String line = scanner.nextLine();
-            if (line.isEmpty()) continue;//проверяет пустая ли
+            if (line.isEmpty()) continue;
             Scanner lineScanner = new Scanner(line);
             String command = lineScanner.next();
             List<String> args = new ArrayList<>();
             while (lineScanner.hasNext()) {
                 args.add(lineScanner.next());
             }
-            if (cmdMap.containsKey(command)) { // проверка ключа
+            if (cmdMap.containsKey(command)) {
                 try {
                     //cmdMap.get(command).exec().accept(args);
                     Command currentCommand = cmdMap.get(command);
@@ -635,5 +659,72 @@ public class CommandLine implements Runnable {
     private static void setSystemStream() {
         scanner = new Scanner(System.in);
         out = System.out;
+    }
+
+    /**
+     * Считывает одну командную строку в интерактивном режиме.
+     * <p>
+     * JLine сам выводит приглашение {@code > }, обрабатывает нажатие Tab
+     * и возвращает готовую строку после Enter. Если настоящий терминал
+     * недоступен, используется запасное чтение через Scanner.
+     * </p>
+     *
+     * @return введенная строка, пустая строка при отмене ввода или {@code null}, если ввод завершен
+     */
+    private static String readInteractiveCommandLine() {
+        try {
+            if (lineReader == null) {
+                lineReader = LineReaderBuilder.builder()
+                        .terminal(TerminalBuilder.builder().system(true).build())
+                        .completer(CommandLine::completeCommands)
+                        .build();
+            }
+            return lineReader.readLine("> ");
+        } catch (EndOfFileException e) {
+            return null;
+        } catch (UserInterruptException e) {
+            return "";
+        } catch (IOException | RuntimeException e) {
+            out.print("> ");
+            return scanner.hasNextLine() ? scanner.nextLine() : null;
+        }
+    }
+
+    /**
+     * Добавляет варианты автодополнения для JLine.
+     * <p>
+     * Метод вызывается JLine при нажатии Tab. Дополняется только первое
+     * слово строки, то есть имя команды; аргументы команд не дополняются.
+     * </p>
+     *
+     * @param reader текущий считыватель JLine
+     * @param line разобранная строка ввода
+     * @param candidates список вариантов, который будет показан пользователю
+     */
+    private static void completeCommands(LineReader reader, ParsedLine line, List<Candidate> candidates) {
+        if (line.wordIndex() != 0) {
+            return;
+        }
+        for (String command : findCommandMatches(line.word())) {
+            candidates.add(new Candidate(command));
+        }
+    }
+
+    /**
+     * Ищет команды, которые начинаются с введенного префикса.
+     *
+     * @param input начало имени команды
+     * @return отсортированный список подходящих команд
+     */
+    private static List<String> findCommandMatches(String input) {
+        dlc.clear();
+        for (String command : cmdMap.keySet()) {
+            if (command.startsWith(input)) {
+                dlc.add(command);
+            }
+        }
+
+        Collections.sort(dlc);
+        return new ArrayList<>(dlc);
     }
 }
