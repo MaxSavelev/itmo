@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Java build output
+out/
+*.class
+
+# Generated Javadoc files
+index-files/
+legal/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp

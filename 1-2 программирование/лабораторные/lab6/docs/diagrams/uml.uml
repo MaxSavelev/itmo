@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>/Users/makssavelev/lab5/src</OriginalElement>
+  <nodes>
+    <node x="564.9059991569877" y="786.0040141353417">storage.CollectionInfo</node>
+    <node x="783.6020971496228" y="1286.0264326628367">data.Coordinates</node>
+    <node x="600.0485671272057" y="1724.6613168520796">data.Jsonify</node>
+    <node x="403.31559909271584" y="1288.2772582546486">storage.Storage</node>
+    <node x="635.3296258612763" y="1031.0286484468756">storage.StorageException</node>
+    <node x="-3.76690337446783" y="1073.432017443003">parser.Parser</node>
+    <node x="309.6504697790123" y="-13.670907237180415">cmd.CommandLine</node>
+    <node x="-116.98520087076014" y="1293.4188028886401">parser.VehicleCollectionParser</node>
+    <node x="191.06131174148078" y="798.7775125797084">storage.VehicleCollection</node>
+    <node x="1092.0523445877243" y="1180.0758971375676">data.Vehicle</node>
+    <node x="827.4966963864431" y="1583.9882475935692">data.FuelType</node>
+    <node x="986.9546328309648" y="650.9763653483923">cmd.Command</node>
+    <node x="695.4669945039495" y="601.7148993526215">cmd.Main</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="parser.VehicleCollectionParser" target="parser.Parser" relationship="REALIZATION">
+      <point x="-44.28170250370769" y="-200.5" />
+      <point x="0.0" y="31.5" />
+    </edge>
+    <edge source="data.Coordinates" target="data.Jsonify" relationship="REALIZATION">
+      <point x="-9.714962277485029E-5" y="118.4995673371634" />
+      <point x="895.602" y="1554.0" />
+      <point x="1048.997" y="1554.0" />
+      <point x="1048.997" y="1756.161" />
+      <point x="70.50043287279425" y="-3.168520795497898E-4" />
+    </edge>
+    <edge source="data.FuelType" target="data.Jsonify" relationship="REALIZATION">
+      <point x="3.036135568663667E-4" y="-68.50024759356916" />
+      <point x="929.497" y="1554.0" />
+      <point x="1048.997" y="1554.0" />
+      <point x="1048.997" y="1756.161" />
+      <point x="70.50043287279425" y="-3.168520795497898E-4" />
+    </edge>
+    <edge source="data.Vehicle" target="data.Jsonify" relationship="REALIZATION">
+      <point x="-199.00034458772438" y="1.0286243241353077E-4" />
+      <point x="1025.102" y="1430.576" />
+      <point x="1025.102" y="1554.0" />
+      <point x="1048.997" y="1554.0" />
+      <point x="1048.997" y="1756.161" />
+      <point x="70.50043287279425" y="-3.168520795497898E-4" />
+    </edge>
+    <edge source="storage.VehicleCollection" target="storage.Storage" relationship="REALIZATION">
+      <point x="63.254287351235064" y="212.5" />
+      <point x="-149.0" y="-187.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="0.4281009879253567" showDependencies="false" x="697.0" y="897.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
