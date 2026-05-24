@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>/Users/makssavelev/lab6/client</OriginalElement>
+  <nodes>
+    <node x="169.0" y="112.0">client.ClientMain</node>
+    <node x="-116.0" y="-19.0">client.Client</node>
+    <node x="-108.0" y="184.0">client.ClientFuelTypeParser</node>
+    <node x="-96.5" y="457.0">client.ClientCommandParser</node>
+    <node x="442.0" y="421.0">client.ClientVehicleReader</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Compact" zoom="0.9733502538071066" showDependencies="false" x="320.0" y="375.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
