@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>/Users/makssavelev/lab6/server</OriginalElement>
+  <nodes>
+    <node x="521.0" y="970.5">parser.Parser</node>
+    <node x="303.5" y="1402.0">parser.VehicleCollectionParser</node>
+    <node x="387.5" y="274.5">storage.StorageException</node>
+    <node x="78.0" y="-14.0">server.ServerMain</node>
+    <node x="215.0" y="490.0">server.Server</node>
+    <node x="-128.5" y="814.5">storage.Storage</node>
+    <node x="-128.5" y="1378.0">storage.VehicleCollection</node>
+    <node x="219.0" y="1290.5">server.Server.ClientState</node>
+    <node x="-126.5" y="250.0">server.ServerCommandProcessor</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="parser.VehicleCollectionParser" target="parser.Parser" relationship="REALIZATION">
+      <point x="0.0" y="-200.0" />
+      <point x="528.0" y="1382.0" />
+      <point x="588.0" y="1382.0" />
+      <point x="0.0" y="31.5" />
+    </edge>
+    <edge source="server.Server.ClientState" target="server.Server" relationship="INNER_CLASS">
+      <point x="0.0" y="-31.5" />
+      <point x="288.0" y="1262.0" />
+      <point x="388.0" y="1262.0" />
+      <point x="0.0" y="152.0" />
+    </edge>
+    <edge source="storage.VehicleCollection" target="storage.Storage" relationship="REALIZATION">
+      <point x="0.0" y="-224.0" />
+      <point x="0.0" y="187.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="0.4198924731182796" showDependencies="false" x="322.0" y="916.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
