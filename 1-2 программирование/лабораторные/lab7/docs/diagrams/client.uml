@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Diagram>
   <ID>JAVA</ID>
-  <OriginalElement>/Users/makssavelev/lab6/client</OriginalElement>
+  <OriginalElement>/Users/makssavelev/lab7/client</OriginalElement>
   <nodes>
-    <node x="169.0" y="112.0">client.ClientMain</node>
-    <node x="-116.0" y="-19.0">client.Client</node>
-    <node x="-108.0" y="184.0">client.ClientFuelTypeParser</node>
-    <node x="-96.5" y="457.0">client.ClientCommandParser</node>
-    <node x="442.0" y="421.0">client.ClientVehicleReader</node>
+    <node x="-112.0" y="-14.0">client.Client</node>
+    <node x="-102.0" y="118.0">client.ClientMain</node>
+    <node x="-95.0" y="873.5">client.ClientMain.UserCredentials</node>
+    <node x="287.5" y="766.0">client.ClientCommandParser</node>
+    <node x="486.0" y="166.0">client.ClientVehicleReader</node>
+    <node x="21.5" y="634.0">client.ClientFuelTypeParser</node>
   </nodes>
   <notes />
-  <edges />
-  <settings layout="Hierarchic Compact" zoom="0.9733502538071066" showDependencies="false" x="320.0" y="375.0" />
+  <edges>
+    <edge source="client.ClientMain.UserCredentials" target="client.ClientMain" relationship="INNER_CLASS">
+      <point x="0.0" y="-56.5" />
+      <point x="-7.0" y="610.0" />
+      <point x="173.0" y="610.0" />
+      <point x="0.0" y="212.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="0.6799645390070922" showDependencies="false" x="344.0" y="550.0" />
   <SelectedNodes />
   <Categories>
     <Category>Constructors</Category>
