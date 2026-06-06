@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>/Users/makssavelev/lab7/server</OriginalElement>
+  <nodes>
+    <node x="2.5" y="-13.5">database.DatabaseException</node>
+    <node x="582.0" y="1787.5">database.DatabaseConfig</node>
+    <node x="611.0" y="248.5">database.DatabaseManager</node>
+    <node x="493.0" y="717.5">server.Server</node>
+    <node x="444.0" y="457.5">auth.UserService</node>
+    <node x="333.0" y="1421.5">auth.UserRepository</node>
+    <node x="-123.5" y="81.5">auth.PasswordHasher</node>
+    <node x="287.5" y="250.5">storage.StorageException</node>
+    <node x="58.0" y="1753.5">server.ServerCommandProcessor</node>
+    <node x="-120.5" y="409.5">server.ServerMain</node>
+    <node x="-128.5" y="1278.5">storage.Storage</node>
+    <node x="480.5" y="2326.5">server.Server.ClientState</node>
+    <node x="55.5" y="837.5">storage.VehicleRepository</node>
+    <node x="-128.5" y="2121.5">storage.VehicleCollection</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="server.Server.ClientState" target="server.Server" relationship="INNER_CLASS">
+      <point x="0.0" y="-31.5" />
+      <point x="548.0" y="1758.0" />
+      <point x="668.0" y="1758.0" />
+      <point x="0.0" y="260.5" />
+    </edge>
+    <edge source="storage.VehicleCollection" target="storage.Storage" relationship="REALIZATION">
+      <point x="0.0" y="-236.5" />
+      <point x="0.0" y="199.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="0.29707112970711297" showDependencies="false" x="422.5" y="1300.5000000000002" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

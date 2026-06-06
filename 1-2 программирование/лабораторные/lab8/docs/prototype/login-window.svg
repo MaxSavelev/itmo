@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="700" viewBox="0 0 980 700">
+  <defs>
+    <style>
+      .canvas { fill: #1f1f1f; }
+      .window { fill: #f4f5f7; stroke: #d0d5dd; stroke-width: 1; }
+      .panel { fill: #ffffff; stroke: #d0d5dd; stroke-width: 1; }
+      .input { fill: #ffffff; stroke: #667085; stroke-width: 1; }
+      .button { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1; }
+      .button-primary { fill: #2563eb; stroke: #2563eb; stroke-width: 1; }
+      .error-box { fill: #fef2f2; stroke: #fecaca; stroke-width: 1; }
+      .title { font: 26px Arial, sans-serif; fill: #111827; }
+      .subtitle { font: 18px Arial, sans-serif; fill: #667085; }
+      .label { font: 18px Arial, sans-serif; fill: #111827; }
+      .small { font: 14px Arial, sans-serif; fill: #667085; }
+      .error { font: 15px Arial, sans-serif; fill: #b91c1c; }
+      .white { fill: #ffffff; }
+    </style>
+  </defs>
+
+  <rect class="canvas" x="0" y="0" width="980" height="700"/>
+  <text x="40" y="34" font-family="Arial, sans-serif" font-size="18" fill="#9ca3af">Окно входа</text>
+
+  <g transform="translate(130,80)">
+    <rect class="window" x="0" y="0" width="720" height="540"/>
+
+    <text class="title" x="60" y="72">Клиент коллекции транспорта</text>
+    <text class="subtitle" x="60" y="104">Вход или регистрация пользователя</text>
+
+    <rect class="panel" x="160" y="135" width="400" height="380"/>
+
+    <text class="label" x="190" y="182">Логин</text>
+    <rect class="input" x="190" y="195" width="340" height="40"/>
+    <text class="label" x="205" y="222">maks</text>
+
+    <text class="label" x="190" y="270">Пароль</text>
+    <rect class="input" x="190" y="283" width="340" height="40"/>
+    <text class="label" x="205" y="311">••••••••</text>
+
+    <rect class="button-primary" x="190" y="350" width="160" height="42"/>
+    <text class="label white" x="244" y="378">Войти</text>
+
+    <rect class="button" x="370" y="350" width="160" height="42"/>
+    <text class="label" x="386" y="378">Регистрация</text>
+
+    <text class="label" x="190" y="430">Язык</text>
+    <rect class="input" x="260" y="407" width="270" height="38"/>
+    <text class="label" x="274" y="433">Русский ▼</text>
+
+    <rect class="error-box" x="190" y="460" width="340" height="40"/>
+    <text class="error" x="204" y="486">Неверный логин или пароль</text>
+  </g>
+</svg>

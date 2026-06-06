@@ -1,0 +1,206 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1380" height="900" viewBox="0 0 1380 900">
+  <defs>
+    <style>
+      .canvas { fill: #1f1f1f; }
+      .window { fill: #f4f5f7; stroke: #d0d5dd; stroke-width: 1; }
+      .panel { fill: #ffffff; stroke: #d0d5dd; stroke-width: 1; }
+      .panel-alt { fill: #f9fafb; stroke: #d0d5dd; stroke-width: 1; }
+      .header { fill: #ffffff; stroke: #d0d5dd; stroke-width: 1; }
+      .button { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1; }
+      .button-primary { fill: #2563eb; stroke: #2563eb; stroke-width: 1; }
+      .input { fill: #ffffff; stroke: #667085; stroke-width: 1; }
+      .table-head { fill: #eef2f7; stroke: #d0d5dd; stroke-width: 1; }
+      .table-row { fill: #ffffff; stroke: #d0d5dd; stroke-width: 1; }
+      .table-row-alt { fill: #f9fafb; stroke: #d0d5dd; stroke-width: 1; }
+      .title { font: 24px Arial, sans-serif; fill: #111827; }
+      .section-title { font: 22px Arial, sans-serif; fill: #111827; }
+      .label { font: 18px Arial, sans-serif; fill: #111827; }
+      .side { font: 16px Arial, sans-serif; fill: #111827; }
+      .side-muted { font: 12px Arial, sans-serif; fill: #667085; }
+      .control { font: 16px Arial, sans-serif; fill: #111827; }
+      .small { font: 14px Arial, sans-serif; fill: #111827; }
+      .table-text { font: 13px Menlo, Consolas, monospace; fill: #111827; }
+      .muted { font: 13px Arial, sans-serif; fill: #667085; }
+      .white { fill: #ffffff; }
+      .grid { stroke: #e5e7eb; stroke-width: 1; }
+      .scroll-track { fill: #f3f4f6; stroke: #d0d5dd; stroke-width: 1; }
+      .scroll-thumb { fill: #cbd5e1; stroke: #94a3b8; stroke-width: 1; }
+    </style>
+  </defs>
+
+  <rect class="canvas" x="0" y="0" width="1380" height="900"/>
+  <text x="40" y="34" font-family="Arial, sans-serif" font-size="18" fill="#9ca3af">Главное окно</text>
+
+  <g transform="translate(40,60)">
+    <rect class="window" x="0" y="0" width="1280" height="800"/>
+
+    <!-- Top bar -->
+    <rect class="header" x="0" y="0" width="1280" height="64"/>
+    <text class="title" x="24" y="40">Клиент коллекции транспорта</text>
+    <text class="title" x="470" y="40">Пользователь: maks</text>
+    <text class="title" x="900" y="40">Язык: Русский ▼</text>
+    <text class="title" x="1148" y="40">↪ Выйти</text>
+
+    <!-- Left command panel -->
+    <rect class="panel" x="0" y="64" width="190" height="736"/>
+    <text class="label" x="16" y="92">Команды</text>
+
+    <g class="side">
+      <rect class="button" x="24" y="120" width="154" height="34"/><text x="34" y="143">Добавить</text>
+      <rect class="button" x="24" y="160" width="154" height="34"/><text x="34" y="183">Изменить</text>
+      <rect class="button" x="24" y="200" width="154" height="34"/><text x="34" y="223">Удалить по ID</text>
+      <rect class="button" x="24" y="240" width="154" height="34"/><text x="34" y="263">Показать</text>
+      <rect class="button" x="24" y="280" width="154" height="34"/><text x="34" y="303">Информация</text>
+      <rect class="button" x="24" y="320" width="154" height="34"/><text x="34" y="343">Справка</text>
+      <rect class="button" x="24" y="360" width="154" height="34"/><text x="34" y="383">Первый</text>
+      <rect class="button" x="24" y="400" width="154" height="34"/><text x="34" y="423">Очистить</text>
+    </g>
+
+    <text class="label" x="16" y="472">Другие команды</text>
+    <rect class="button" x="24" y="492" width="154" height="34"/>
+    <text class="side" x="34" y="515">Если максимум ▼</text>
+    <rect class="button" x="24" y="532" width="154" height="34"/>
+    <text class="label" x="34" y="556">Выполнить</text>
+    <text class="side-muted" x="24" y="590">Удалить большие</text>
+    <text class="side-muted" x="24" y="610">Фильтр по топливу</text>
+    <text class="side-muted" x="24" y="630">Фильтр по имени</text>
+    <text class="side-muted" x="24" y="650">Кол-во по колёсам</text>
+
+    <text class="label" x="16" y="690">Скрипт</text>
+    <rect class="button" x="24" y="710" width="154" height="34"/>
+    <text class="side" x="34" y="733">Выполнить скрипт</text>
+    <rect class="button" x="24" y="762" width="154" height="28"/>
+    <text class="label" x="60" y="783">Закрыть</text>
+
+    <!-- Table panel -->
+    <rect class="panel" x="210" y="90" width="1050" height="320"/>
+    <text class="section-title" x="230" y="125">Таблица объектов</text>
+
+    <text class="label" x="230" y="170">Фильтр:</text>
+    <rect class="input" x="315" y="145" width="150" height="32"/>
+    <text class="label" x="327" y="168">машина</text>
+
+    <text class="label" x="500" y="170">Колонка</text>
+    <rect class="input" x="600" y="145" width="130" height="32"/>
+    <text class="label" x="612" y="168">Название ▼</text>
+
+    <text class="label" x="765" y="170">Сортировка</text>
+    <rect class="input" x="900" y="145" width="90" height="32"/>
+    <text class="label" x="912" y="168">ID ▼</text>
+    <rect class="button" x="1008" y="145" width="42" height="32"/>
+    <text class="label" x="1021" y="168">↑</text>
+    <rect class="button-primary" x="1068" y="145" width="104" height="32"/>
+    <text class="control white" x="1083" y="167">Применить</text>
+    <rect class="button" x="1182" y="145" width="68" height="32"/>
+    <text class="control" x="1192" y="167">Сброс</text>
+
+    <rect class="table-head" x="230" y="220" width="1010" height="34"/>
+    <rect class="table-row" x="230" y="254" width="1010" height="34"/>
+    <rect class="table-row-alt" x="230" y="288" width="1010" height="34"/>
+    <rect class="table-row" x="230" y="322" width="1010" height="34"/>
+
+    <g class="table-text">
+      <text x="242" y="242">ID</text>
+      <text x="278" y="242">Название</text>
+      <text x="388" y="242">X</text>
+      <text x="430" y="242">Y</text>
+      <text x="478" y="242">Дата создания</text>
+      <text x="612" y="242">Мощность</text>
+      <text x="742" y="242">Колёса</text>
+      <text x="820" y="242">Вместимость</text>
+      <text x="930" y="242">Топливо</text>
+      <text x="1060" y="242">Владелец</text>
+
+      <text x="242" y="276">1</text>
+      <text x="278" y="276">Машина A</text>
+      <text x="388" y="276">120</text>
+      <text x="430" y="276">80</text>
+      <text x="478" y="276">04.06.2026</text>
+      <text x="612" y="276">450</text>
+      <text x="742" y="276">4</text>
+      <text x="820" y="276">1200</text>
+      <text x="930" y="276">Бензин</text>
+      <text x="1060" y="276">maks</text>
+
+      <text x="242" y="310">2</text>
+      <text x="278" y="310">Грузовик</text>
+      <text x="388" y="310">240</text>
+      <text x="430" y="310">180</text>
+      <text x="478" y="310">04.06.2026</text>
+      <text x="612" y="310">700</text>
+      <text x="742" y="310">6</text>
+      <text x="820" y="310">5000</text>
+      <text x="930" y="310">Дизель</text>
+      <text x="1060" y="310">anna</text>
+
+      <text x="242" y="344">3</text>
+      <text x="278" y="344">Мотоцикл</text>
+      <text x="388" y="344">90</text>
+      <text x="430" y="344">300</text>
+      <text x="478" y="344">04.06.2026</text>
+      <text x="612" y="344">80</text>
+      <text x="742" y="344">2</text>
+      <text x="820" y="344">150</text>
+      <text x="930" y="344">Мускульная</text>
+      <text x="1060" y="344">maks</text>
+    </g>
+
+    <!-- Visualization panel -->
+    <rect class="panel" x="210" y="430" width="640" height="340"/>
+    <text class="section-title" x="230" y="467">Визуализация объектов</text>
+    <rect class="panel-alt" x="230" y="495" width="600" height="190"/>
+    <line class="grid" x1="290" y1="495" x2="290" y2="668"/>
+    <line class="grid" x1="350" y1="495" x2="350" y2="668"/>
+    <line class="grid" x1="410" y1="495" x2="410" y2="668"/>
+    <line class="grid" x1="470" y1="495" x2="470" y2="668"/>
+    <line class="grid" x1="530" y1="495" x2="530" y2="668"/>
+    <line class="grid" x1="590" y1="495" x2="590" y2="668"/>
+    <line class="grid" x1="650" y1="495" x2="650" y2="668"/>
+    <line class="grid" x1="710" y1="495" x2="710" y2="668"/>
+    <line class="grid" x1="770" y1="495" x2="770" y2="668"/>
+    <line class="grid" x1="230" y1="555" x2="812" y2="555"/>
+    <line class="grid" x1="230" y1="615" x2="812" y2="615"/>
+    <text class="muted" x="246" y="518">Координаты задают положение, размер зависит от вместимости</text>
+    <circle cx="302" cy="575" r="18" fill="#2563eb" opacity="0.9"/>
+    <circle cx="302" cy="575" r="24" fill="none" stroke="#111827" stroke-width="2"/>
+    <text class="small" x="286" y="608">maks</text>
+
+    <rect x="438" y="590" width="50" height="32" rx="4" fill="#16a34a" opacity="0.9"/>
+    <text class="small" x="444" y="646">anna</text>
+
+    <polygon points="665,548 695,592 635,592" fill="#f97316" opacity="0.92"/>
+    <text class="small" x="652" y="622">ivan</text>
+
+    <circle cx="545" cy="540" r="13" fill="#2563eb" opacity="0.75"/>
+    <rect x="755" y="628" width="34" height="24" rx="4" fill="#16a34a" opacity="0.75"/>
+    <polygon points="365,642 386,670 344,670" fill="#f97316" opacity="0.75"/>
+
+    <rect class="scroll-track" x="813" y="495" width="17" height="173"/>
+    <rect class="scroll-thumb" x="816" y="530" width="11" height="58" rx="5"/>
+    <rect class="scroll-track" x="230" y="668" width="583" height="17"/>
+    <rect class="scroll-thumb" x="360" y="671" width="160" height="11" rx="5"/>
+    <rect class="scroll-track" x="813" y="668" width="17" height="17"/>
+
+    <text class="label" x="230" y="715">Цвета владельцев</text>
+    <circle cx="248" cy="742" r="7" fill="#2563eb"/><text class="small" x="263" y="746">maks</text>
+    <circle cx="338" cy="742" r="7" fill="#16a34a"/><text class="small" x="353" y="746">anna</text>
+    <circle cx="428" cy="742" r="7" fill="#f97316"/><text class="small" x="443" y="746">ivan</text>
+
+    <!-- Selected object panel -->
+    <rect class="panel" x="870" y="430" width="390" height="340"/>
+    <text class="section-title" x="890" y="467">Выбранный объект</text>
+    <text class="label" x="890" y="512">ID: 1</text>
+    <text class="label" x="890" y="542">Название: Машина A</text>
+    <text class="label" x="890" y="572">Владелец: maks</text>
+    <text class="label" x="890" y="602">Координаты: 120, 80</text>
+    <text class="label" x="890" y="632">Мощность: 450</text>
+    <text class="label" x="890" y="662">Колёса: 4</text>
+    <text class="label" x="890" y="692">Вместимость: 1200</text>
+    <text class="label" x="890" y="722">Топливо: Бензин</text>
+
+    <rect class="button-primary" x="1038" y="706" width="82" height="34"/>
+    <text class="label white" x="1049" y="730">Изменить</text>
+    <rect class="button" x="1132" y="706" width="112" height="34"/>
+    <text class="label" x="1152" y="730">Удалить</text>
+  </g>
+</svg>

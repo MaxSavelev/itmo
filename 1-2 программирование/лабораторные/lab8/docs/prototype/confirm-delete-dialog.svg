@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="460" viewBox="0 0 760 460">
+  <defs>
+    <style>
+      .canvas { fill: #1f1f1f; }
+      .window { fill: #f4f5f7; stroke: #d0d5dd; stroke-width: 1; }
+      .panel { fill: #ffffff; stroke: #d0d5dd; stroke-width: 1; }
+      .button { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1; }
+      .button-danger { fill: #dc2626; stroke: #dc2626; stroke-width: 1; }
+      .title { font: 24px Arial, sans-serif; fill: #111827; }
+      .label { font: 18px Arial, sans-serif; fill: #111827; }
+      .white { fill: #ffffff; }
+    </style>
+  </defs>
+
+  <rect class="canvas" x="0" y="0" width="760" height="460"/>
+  <text x="40" y="34" font-family="Arial, sans-serif" font-size="18" fill="#9ca3af">Подтверждение удаления</text>
+
+  <g transform="translate(130,70)">
+    <rect class="window" x="0" y="0" width="500" height="300"/>
+    <rect class="panel" x="32" y="32" width="436" height="160"/>
+
+    <text class="title" x="58" y="76">Удалить объект?</text>
+    <text class="label" x="58" y="120">ID: 1</text>
+    <text class="label" x="58" y="150">Название: Машина A</text>
+    <text class="label" x="270" y="150">Владелец: maks</text>
+
+    <rect class="button-danger" x="240" y="220" width="110" height="40"/>
+    <text class="label white" x="263" y="247">Удалить</text>
+
+    <rect class="button" x="370" y="220" width="98" height="40"/>
+    <text class="label" x="390" y="247">Отмена</text>
+  </g>
+</svg>

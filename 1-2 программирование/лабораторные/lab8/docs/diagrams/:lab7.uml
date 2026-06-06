@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>/Users/makssavelev/lab7</OriginalElement>
+  <nodes>
+    <node x="1951.0" y="1015.0">client.ClientMain</node>
+    <node x="2415.5" y="3156.5">data.Jsonify</node>
+    <node x="2021.5" y="2507.0">parser.VehicleCollectionParser</node>
+    <node x="1820.0" y="3056.0">database.DatabaseConfig</node>
+    <node x="91.0" y="127.0">server.Server</node>
+    <node x="-27.5" y="3605.5">common.request.LoginRequest</node>
+    <node x="106.0" y="3801.5">common.request.AuthenticatedRequest</node>
+    <node x="1845.5" y="2195.0">storage.CollectionInfo</node>
+    <node x="399.0" y="3629.5">common.request.RemoveGreaterRequest</node>
+    <node x="1593.5" y="2567.0">storage.VehicleRepository</node>
+    <node x="607.0" y="3876.5">common.request.ShowRequest</node>
+    <node x="708.5" y="3629.5">common.request.ExecuteScriptRequest</node>
+    <node x="844.0" y="3825.5">common.request.RegisterRequest</node>
+    <node x="1682.0" y="1847.0">auth.UserService</node>
+    <node x="1260.5" y="3023.0">client.ClientCommandParser</node>
+    <node x="993.0" y="3605.5">common.request.UpdateRequest</node>
+    <node x="1173.5" y="3876.5">common.request.InfoRequest</node>
+    <node x="1277.5" y="3629.5">common.request.AddIfMaxRequest</node>
+    <node x="1405.5" y="3849.5">common.request.FilterStartsWithNameRequest</node>
+    <node x="1010.5" y="2615.0">cmd.Command</node>
+    <node x="1824.0" y="326.0">data.FuelType</node>
+    <node x="1600.0" y="3629.5">common.request.RemoveByIdRequest</node>
+    <node x="1483.0" y="2181.5">common.response.CommandResponse</node>
+    <node x="-158.0" y="3469.0">common.request.CommandRequest</node>
+    <node x="1727.5" y="3849.5">common.request.CountByNumberOfWheelsRequest</node>
+    <node x="1988.0" y="3656.5">common.request.ClearRequest</node>
+    <node x="1309.5" y="1723.5">storage.Storage</node>
+    <node x="1702.0" y="1171.0">common.io.ObjectSerializer</node>
+    <node x="1603.0" y="343.0">cmd.Main</node>
+    <node x="1519.0" y="1196.5">parser.Parser</node>
+    <node x="1090.5" y="-18.5">cmd.CommandLine</node>
+    <node x="1140.5" y="2251.5">database.DatabaseException</node>
+    <node x="2082.5" y="3871.5">common.request.HelpRequest</node>
+    <node x="974.5" y="1171.0">auth.PasswordHasher</node>
+    <node x="965.5" y="1860.5">storage.StorageException</node>
+    <node x="2133.5" y="1868.0">client.ClientMain.UserCredentials</node>
+    <node x="496.0" y="2543.0">server.ServerCommandProcessor</node>
+    <node x="38.5" y="1896.5">server.Server.ClientState</node>
+    <node x="829.0" y="2226.0">client.ClientFuelTypeParser</node>
+    <node x="-153.0" y="832.0">data.Vehicle</node>
+    <node x="829.5" y="2951.0">storage.VehicleCollection</node>
+    <node x="306.5" y="3044.0">common.dto.CollectionInfo</node>
+    <node x="649.0" y="1857.5">database.DatabaseManager</node>
+    <node x="2189.0" y="3629.5">common.request.FilterByFuelTypeRequest</node>
+    <node x="491.0" y="2231.0">auth.UserRepository</node>
+    <node x="281.0" y="1878.0">client.Client</node>
+    <node x="130.5" y="2183.0">common.io.FramedMessageCodec</node>
+    <node x="2408.0" y="3876.5">common.request.HeadRequest</node>
+    <node x="-145.5" y="3849.5">common.request.AddRequest</node>
+    <node x="-146.0" y="2156.0">data.Coordinates</node>
+    <node x="139.0" y="2543.0">client.ClientVehicleReader</node>
+    <node x="-122.5" y="3059.0">server.ServerMain</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="common.request.ClearRequest" target="common.request.CommandRequest" relationship="REALIZATION">
+      <point x="0.0" y="-31.5" />
+      <point x="2066.0" y="3568.0" />
+      <point x="-54.0" y="3568.0" />
+      <point x="0.0" y="19.0" />
+    </edge>
+    <edge source="common.request.AuthenticatedRequest" target="common.request.CommandRequest" relationship="REALIZATION">
+      <point x="0.0" y="-106.5" />
+      <point x="306.0" y="3568.0" />
+      <point x="-54.0" y="3568.0" />
+      <point x="0.0" y="19.0" />
+    </edge>
+    <edge source="common.request.HeadRequest" target="common.request.CommandRequest" relationship="REALIZATION">
+      <point x="0.0" y="-31.5" />
+      <point x="2486.0" y="3568.0" />
+      <point x="-54.0" y="3568.0" />
+      <point x="0.0" y="19.0" />
+    </edge>
+    <edge source="common.request.HelpRequest" target="common.request.CommandRequest" relationship="REALIZATION">
+      <point x="0.0" y="-36.5" />
+      <point x="2166.0" y="3568.0" />
+      <point x="-54.0" y="3568.0" />
+      <point x="0.0" y="19.0" />
+    </edge>
+    <edge source="common.request.ShowRequest" target="common.request.CommandRequest" relationship="REALIZATION">
+      <point x="0.0" y="-31.5" />
+      <point x="686.0" y="3568.0" />
+      <point x="-54.0" y="3568.0" />
+      <point x="0.0" y="19.0" />
+    </edge>
+    <edge source="server.Server.ClientState" target="server.Server" relationship="INNER_CLASS">
+      <point x="0.0" y="-31.5" />
+      <point x="106.0" y="1868.0" />
+      <point x="266.0" y="1868.0" />
+      <point x="0.0" y="261.0" />
+    </edge>
+    <edge source="common.request.FilterStartsWithNameRequest" target="common.request.CommandRequest" relationship="REALIZATION">
+      <point x="0.0" y="-58.5" />
+      <point x="1546.0" y="3568.0" />
+      <point x="-54.0" y="3568.0" />
+      <point x="0.0" y="19.0" />
+    </edge>
+    <edge source="common.request.FilterByFuelTypeRequest" target="common.request.CommandRequest" relationship="REALIZATION">
+      <point x="0.0" y="-58.5" />
+      <point x="2326.0" y="3568.0" />
+      <point x="-54.0" y="3568.0" />
+      <point x="0.0" y="19.0" />
+    </edge>
+    <edge source="common.request.CountByNumberOfWheelsRequest" target="common.request.CommandRequest" relationship="REALIZATION">
+      <point x="0.0" y="-58.5" />
+      <point x="1886.0" y="3568.0" />
+      <point x="-54.0" y="3568.0" />
+      <point x="0.0" y="19.0" />
+    </edge>
+    <edge source="common.request.InfoRequest" target="common.request.CommandRequest" relationship="REALIZATION">
+      <point x="0.0" y="-31.5" />
+      <point x="1246.0" y="3568.0" />
+      <point x="-54.0" y="3568.0" />
+      <point x="0.0" y="19.0" />
+    </edge>
+    <edge source="common.request.AddIfMaxRequest" target="common.request.CommandRequest" relationship="REALIZATION">
+      <point x="0.0" y="-58.5" />
+      <point x="1386.0" y="3568.0" />
+      <point x="-54.0" y="3568.0" />
+      <point x="0.0" y="19.0" />
+    </edge>
+    <edge source="common.request.RemoveByIdRequest" target="common.request.CommandRequest" relationship="REALIZATION">
+      <point x="0.0" y="-58.5" />
+      <point x="1706.0" y="3568.0" />
+      <point x="-54.0" y="3568.0" />
+      <point x="0.0" y="19.0" />
+    </edge>
+    <edge source="common.request.LoginRequest" target="common.request.CommandRequest" relationship="REALIZATION">
+      <point x="0.0" y="-82.5" />
+      <point x="86.0" y="3568.0" />
+      <point x="-54.0" y="3568.0" />
+      <point x="0.0" y="19.0" />
+    </edge>
+    <edge source="storage.VehicleCollection" target="storage.Storage" relationship="REALIZATION">
+      <point x="0.0" y="-237.0" />
+      <point x="986.0" y="2588.0" />
+      <point x="1466.0" y="2588.0" />
+      <point x="0.0" y="204.5" />
+    </edge>
+    <edge source="common.request.UpdateRequest" target="common.request.CommandRequest" relationship="REALIZATION">
+      <point x="0.0" y="-82.5" />
+      <point x="1106.0" y="3568.0" />
+      <point x="-54.0" y="3568.0" />
+      <point x="0.0" y="19.0" />
+    </edge>
+    <edge source="common.request.AddRequest" target="common.request.CommandRequest" relationship="REALIZATION">
+      <point x="0.0" y="-58.5" />
+      <point x="0.0" y="19.0" />
+    </edge>
+    <edge source="common.request.RemoveGreaterRequest" target="common.request.CommandRequest" relationship="REALIZATION">
+      <point x="0.0" y="-58.5" />
+      <point x="526.0" y="3568.0" />
+      <point x="-54.0" y="3568.0" />
+      <point x="0.0" y="19.0" />
+    </edge>
+    <edge source="common.request.ExecuteScriptRequest" target="common.request.CommandRequest" relationship="REALIZATION">
+      <point x="0.0" y="-58.5" />
+      <point x="826.0" y="3568.0" />
+      <point x="-54.0" y="3568.0" />
+      <point x="0.0" y="19.0" />
+    </edge>
+    <edge source="common.request.RegisterRequest" target="common.request.CommandRequest" relationship="REALIZATION">
+      <point x="0.0" y="-82.5" />
+      <point x="966.0" y="3568.0" />
+      <point x="-54.0" y="3568.0" />
+      <point x="0.0" y="19.0" />
+    </edge>
+    <edge source="client.ClientMain.UserCredentials" target="client.ClientMain" relationship="INNER_CLASS">
+      <point x="0.0" y="-60.0" />
+      <point x="0.0" y="213.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="0.18919585594474592" showDependencies="false" x="1213.0" y="2008.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

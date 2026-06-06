@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="860" viewBox="0 0 980 860">
+  <defs>
+    <style>
+      .canvas { fill: #1f1f1f; }
+      .window { fill: #f4f5f7; stroke: #d0d5dd; stroke-width: 1; }
+      .panel { fill: #ffffff; stroke: #d0d5dd; stroke-width: 1; }
+      .input { fill: #ffffff; stroke: #667085; stroke-width: 1; }
+      .readonly { fill: #f9fafb; stroke: #cbd5e1; stroke-width: 1; }
+      .button { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1; }
+      .button-primary { fill: #2563eb; stroke: #2563eb; stroke-width: 1; }
+      .title { font: 26px Arial, sans-serif; fill: #111827; }
+      .subtitle { font: 16px Arial, sans-serif; fill: #667085; }
+      .section-title { font: 20px Arial, sans-serif; fill: #111827; }
+      .label { font: 18px Arial, sans-serif; fill: #111827; }
+      .small { font: 14px Arial, sans-serif; fill: #667085; }
+      .white { fill: #ffffff; }
+    </style>
+  </defs>
+
+  <rect class="canvas" x="0" y="0" width="980" height="860"/>
+  <text x="40" y="34" font-family="Arial, sans-serif" font-size="18" fill="#9ca3af">Окно редактирования</text>
+
+  <g transform="translate(150,55)">
+    <rect class="window" x="0" y="0" width="680" height="760"/>
+
+    <text class="title" x="40" y="58">Редактирование объекта</text>
+    <text class="subtitle" x="40" y="84">Изменение выбранного объекта.</text>
+
+    <rect class="panel" x="40" y="110" width="600" height="610"/>
+
+    <text class="section-title" x="70" y="150">Выбранный объект</text>
+    <rect class="readonly" x="70" y="170" width="480" height="42"/>
+    <text class="small" x="86" y="196">ID: 1</text>
+    <text class="small" x="178" y="196">Дата создания: 04.06.2026</text>
+    <text class="small" x="410" y="196">Владелец: maks</text>
+
+    <text class="section-title" x="70" y="250">Редактируемые поля</text>
+
+    <text class="label" x="70" y="295">Название</text>
+    <rect class="input" x="220" y="268" width="330" height="38"/>
+    <text class="label" x="234" y="294">Машина A</text>
+
+    <text class="section-title" x="70" y="345">Координаты</text>
+    <text class="label" x="90" y="390">x</text>
+    <rect class="input" x="220" y="363" width="130" height="38"/>
+    <text class="label" x="234" y="389">120</text>
+
+    <text class="label" x="380" y="390">y</text>
+    <rect class="input" x="420" y="363" width="130" height="38"/>
+    <text class="label" x="434" y="389">80</text>
+
+    <text class="label" x="70" y="440">Мощность</text>
+    <rect class="input" x="220" y="413" width="330" height="38"/>
+    <text class="label" x="234" y="439">450</text>
+
+    <text class="label" x="70" y="490">Колёса</text>
+    <rect class="input" x="220" y="463" width="330" height="38"/>
+    <text class="label" x="234" y="489">4</text>
+
+    <text class="label" x="70" y="540">Вместимость</text>
+    <rect class="input" x="220" y="513" width="330" height="38"/>
+    <text class="label" x="234" y="539">1200</text>
+
+    <text class="label" x="70" y="590">Топливо</text>
+    <rect class="input" x="220" y="563" width="330" height="38"/>
+    <text class="label" x="234" y="589">Бензин ▼</text>
+
+    <rect class="button-primary" x="300" y="650" width="120" height="40"/>
+    <text class="label white" x="326" y="677">Сохранить</text>
+    <rect class="button" x="440" y="650" width="110" height="40"/>
+    <text class="label" x="470" y="677">Отмена</text>
+  </g>
+</svg>

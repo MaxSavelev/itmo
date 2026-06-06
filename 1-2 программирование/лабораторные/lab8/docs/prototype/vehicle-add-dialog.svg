@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="780" viewBox="0 0 980 780">
+  <defs>
+    <style>
+      .canvas { fill: #1f1f1f; }
+      .window { fill: #f4f5f7; stroke: #d0d5dd; stroke-width: 1; }
+      .panel { fill: #ffffff; stroke: #d0d5dd; stroke-width: 1; }
+      .input { fill: #ffffff; stroke: #667085; stroke-width: 1; }
+      .button { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1; }
+      .button-primary { fill: #2563eb; stroke: #2563eb; stroke-width: 1; }
+      .title { font: 26px Arial, sans-serif; fill: #111827; }
+      .subtitle { font: 16px Arial, sans-serif; fill: #667085; }
+      .section-title { font: 20px Arial, sans-serif; fill: #111827; }
+      .label { font: 18px Arial, sans-serif; fill: #111827; }
+      .white { fill: #ffffff; }
+    </style>
+  </defs>
+
+  <rect class="canvas" x="0" y="0" width="980" height="780"/>
+  <text x="40" y="34" font-family="Arial, sans-serif" font-size="18" fill="#9ca3af">Окно добавления</text>
+
+  <g transform="translate(150,55)">
+    <rect class="window" x="0" y="0" width="680" height="660"/>
+
+    <text class="title" x="40" y="58">Добавление объекта</text>
+    <text class="subtitle" x="40" y="84">Создание нового объекта текущего пользователя.</text>
+
+    <rect class="panel" x="40" y="110" width="600" height="470"/>
+    <text class="section-title" x="70" y="150">Поля объекта</text>
+
+    <text class="label" x="70" y="195">Название</text>
+    <rect class="input" x="220" y="168" width="330" height="38"/>
+    <text class="label" x="234" y="194">Машина A</text>
+
+    <text class="section-title" x="70" y="245">Координаты</text>
+    <text class="label" x="90" y="290">x</text>
+    <rect class="input" x="220" y="263" width="130" height="38"/>
+    <text class="label" x="234" y="289">120</text>
+
+    <text class="label" x="380" y="290">y</text>
+    <rect class="input" x="420" y="263" width="130" height="38"/>
+    <text class="label" x="434" y="289">80</text>
+
+    <text class="label" x="70" y="340">Мощность</text>
+    <rect class="input" x="220" y="313" width="330" height="38"/>
+    <text class="label" x="234" y="339">450</text>
+
+    <text class="label" x="70" y="390">Колёса</text>
+    <rect class="input" x="220" y="363" width="330" height="38"/>
+    <text class="label" x="234" y="389">4</text>
+
+    <text class="label" x="70" y="440">Вместимость</text>
+    <rect class="input" x="220" y="413" width="330" height="38"/>
+    <text class="label" x="234" y="439">1200</text>
+
+    <text class="label" x="70" y="490">Топливо</text>
+    <rect class="input" x="220" y="463" width="330" height="38"/>
+    <text class="label" x="234" y="489">Бензин ▼</text>
+
+    <rect class="button-primary" x="300" y="605" width="120" height="40"/>
+    <text class="label white" x="326" y="632">Сохранить</text>
+    <rect class="button" x="440" y="605" width="110" height="40"/>
+    <text class="label" x="470" y="632">Отмена</text>
+  </g>
+</svg>
