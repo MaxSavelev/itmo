@@ -17,7 +17,6 @@ function isYInRange(value) {
         return false;
     }
 
-    // Для диапазона (-3; 3) достаточно проверить целую часть записи.
     const integerPart = Number(value.split(".")[0]);
     return Math.abs(integerPart) < 3;
 }
@@ -27,7 +26,6 @@ function isPointInArea(xNumber, yText, rNumber) {
     const fractionPart = parts[1] || "";
     const scale = 10n ** BigInt(fractionPart.length);
 
-    // Увеличиваем все величины одинаково, чтобы считать целыми числами.
     const x = BigInt(xNumber) * scale;
     const y = BigInt(parts[0] + fractionPart);
     const r = BigInt(rNumber) * scale;
@@ -228,7 +226,6 @@ rButtons.forEach(function (button) {
     });
 });
 
-// Пересчитываем отображаемое время, если часовой пояс устройства изменился.
 function refreshResultTimes() {
     results.forEach(function (result, index) {
         resultsBody.rows[index].cells[4].textContent = formatDateTime(result.checkedAt);
@@ -245,20 +242,18 @@ function drawGraph() {
     const centerY = canvas.height / 2;
     const selectedR = Number(rInput.value);
     const r = allowedR.includes(selectedR) ? selectedR : null;
-    const scale = 28; // Пикселей на одну единицу координат.
+    const scale = 28;
     const radius = (r === null ? 5 : r) * scale;
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = "#3399ff";
 
-    // Четверть круга снизу слева.
     ctx.beginPath();
     ctx.moveTo(centerX, centerY);
     ctx.arc(centerX, centerY, radius, Math.PI / 2, Math.PI);
     ctx.closePath();
     ctx.fill();
 
-    // Треугольник сверху справа.
     ctx.beginPath();
     ctx.moveTo(centerX, centerY);
     ctx.lineTo(centerX, centerY - radius / 2);
@@ -266,10 +261,8 @@ function drawGraph() {
     ctx.closePath();
     ctx.fill();
 
-    // Прямоугольник снизу справа.
     ctx.fillRect(centerX, centerY, radius, radius / 2);
 
-    // Координатные оси и стрелки.
     ctx.strokeStyle = "#222222";
     ctx.lineWidth = 1.5;
     ctx.beginPath();
@@ -286,7 +279,6 @@ function drawGraph() {
     ctx.lineTo(centerX + 5, 28);
     ctx.stroke();
 
-    // До выбора R показываем образец из задания, после выбора — числовые оси.
     const marks = r === null ? [-5, -2.5, 2.5, 5] : [-5, -4, -3, -2, -1, 1, 2, 3, 4, 5];
     const labels = r === null ? ["−R", "−R/2", "R/2", "R"] : marks.map(String);
     ctx.fillStyle = "#222222";
