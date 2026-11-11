@@ -11,4 +11,3 @@ out/
 fastcgi-lib.jar
 .httpd-local/
 httpd-local.conf
-httpd-helios.conf
