@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Local builds and configuration
+out/
+*.class
+fastcgi-lib.jar
+.httpd-local/
+httpd-local.conf
+httpd-helios.conf

@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab2</title>
+    <style>
+        body {
+            isolation: isolate;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background-image: url("../resources/background.jpeg");
+            background-size: cover;
+            background-position: center;
+            opacity: 0.5;
+        }
+
+        body > table {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        table {
+            border-collapse: collapse;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        td {
+            border: 1px solid black;
+        }
+
+        #student-header {
+            font-family: fantasy;
+            color: darkblue;
+            font-size: 18px;
+        }
+
+        .field-error {
+            color: #b00020;
+            min-height: 1.2em;
+            margin: 0 2px 8px;
+            text-align: left;
+        }
+
+        .invalid-field,
+        #x-input.invalid-field {
+            border-color: #b00020;
+            background-color: #fff0f0;
+        }
+
+        .choice-fieldset {
+            text-align: center;
+        }
+
+        .choice-fieldset > legend {
+            text-align: left;
+        }
+
+        #x-input,
+        #r-input,
+        .y-option {
+            padding: 4px 12px;
+            border-radius: 7px;
+            display: inline-block;
+            margin: 8px 2px;
+        }
+
+        #x-input,
+        #r-input {
+            border: 1px solid #777777;
+        }
+
+        .y-option {
+            position: relative;
+            background-color: #eeeeee;
+            white-space: nowrap;
+        }
+
+        .y-option:hover {
+            background-color: #d6e4ff;
+            cursor: pointer;
+        }
+
+        .y-option > input {
+            position: absolute;
+            opacity: 0;
+            margin: 0;
+        }
+
+        .y-option:has(> input:checked) {
+            background-color: royalblue;
+            color: white;
+        }
+
+        .y-option:has(> input:focus-visible) {
+            outline: 2px solid #222222;
+            outline-offset: 2px;
+        }
+
+        #check-button {
+            display: block;
+            margin: 8px auto;
+            padding: 4px 12px;
+        }
+
+        #graph {
+            display: block;
+            margin: 12px;
+        }
+
+        #results-table {
+            width: 100%;
+        }
+
+        #clear-history-button {
+            margin-bottom: 8px;
+            padding: 4px 12px;
+            cursor: pointer;
+        }
+
+        #results-table th,
+        #results-table td {
+            border: 1px solid black;
+            padding: 6px;
+            text-align: center;
+        }
+
+        #results-table td {
+            max-width: 240px;
+            overflow-wrap: anywhere;
+        }
+
+        .hit {
+            color: green;
+        }
+
+        .miss {
+            color: #b00020;
+        }
+
+        body {
+            min-height: 100vh;
+        }
+
+        .particle {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: royalblue;
+            pointer-events: none;
+            z-index: 1;
+        }
+    </style>
+    <script src="script.js" defer></script>
+</head>
+<body>
+<table>
+    <tr>
+        <td colspan="2">
+            <header id="student-header">
+                <h1>Проверка попадания точки</h1>
+                <p>Савельев Максим Сергеевич</p>
+                <p>Группа: P3208</p>
+                <p>Вариант: 449652</p>
+            </header>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <canvas id="graph" width="400" height="400">
+                Для отображения графика нужен браузер с поддержкой Canvas.
+            </canvas>
+        </td>
+        <td>
+            <form id="point-form">
+                <fieldset>
+                    <legend>Координата X</legend>
+                    <label for="x-input">Введите X строго между −5 и 5:</label>
+                    <input
+                            type="text"
+                            id="x-input"
+                            name="x"
+                            placeholder="-5 < X < 5"
+                    >
+                    <p id="x-error" class="field-error"></p>
+                </fieldset>
+
+                <fieldset id="y-fieldset" class="choice-fieldset">
+                    <legend>Координата Y</legend>
+                    <label class="y-option"><input type="radio" name="y" value="-3">-3</label>
+                    <label class="y-option"><input type="radio" name="y" value="-2">-2</label>
+                    <label class="y-option"><input type="radio" name="y" value="-1">-1</label>
+                    <label class="y-option"><input type="radio" name="y" value="0">0</label>
+                    <label class="y-option"><input type="radio" name="y" value="1">1</label>
+                    <label class="y-option"><input type="radio" name="y" value="2">2</label>
+                    <label class="y-option"><input type="radio" name="y" value="3">3</label>
+                    <label class="y-option"><input type="radio" name="y" value="4">4</label>
+                    <label class="y-option"><input type="radio" name="y" value="5">5</label>
+                    <p id="y-error" class="field-error"></p>
+                </fieldset>
+                <fieldset id="r-fieldset" class="choice-fieldset">
+                    <legend>Радиус R</legend>
+                    <select id="r-input" name="r" aria-label="Радиус R">
+                        <option value="">Выберите R</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <p id="r-error" class="field-error"></p>
+                </fieldset>
+                <button type="submit" id="check-button">Проверить</button>
+                <p id="request-error" class="field-error"></p>
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <h2>Результаты</h2>
+            <button type="button" id="clear-history-button">Очистить историю</button>
+            <table id="results-table">
+                <thead>
+                <tr>
+                    <th>X</th>
+                    <th>Y</th>
+                    <th>R</th>
+                    <th>Результат</th>
+                    <th>Дата и время</th>
+                    <th>Время выполнения нс</th>
+                </tr>
+                </thead>
+                <tbody id="results-body"></tbody>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
