@@ -23,22 +23,4 @@
 
 - Данные формы должны передаваться на обработку посредством GET-запроса.
 
----
-
-## Запуск
-
-1. Возьмите `fastcgi-lib.jar` из материалов лабораторной работы и поместите его в каталог `lab2`.
-2. Поместите `src/index.html` и `src/script.js` в корень сайта Apache, а `resources/background.jpeg` — в подпапку `resources` этого корня.
-3. Сохраните шаблон `httpd-helios.conf.example` как `~/httpd-root/conf/httpd.conf` и укажите свой логин, порт Apache и порт FastCGI. Для путей из шаблона нужны каталоги `~/httpd-root/htdocs` и `~/httpd-root/mutex-dir`. Apache передаёт запросы к `/check` приложению Java.
-4. Соберите и запустите Java-приложение из каталога `lab2`. В команде запуска укажите тот же порт FastCGI, что и в настройках Apache.
-
-```sh
-javac -encoding UTF-8 -cp fastcgi-lib.jar -d out src/Main.java
-java -DFCGI_PORT=9000 -cp "out:fastcgi-lib.jar" Main
-```
-
-В другом терминале запустите Apache.
-
-```sh
-httpd -f "$HOME/httpd-root/conf/httpd.conf" -k start
-```
+Для сборки Java-части нужен `fastcgi-lib.jar` из материалов лабораторной работы.
